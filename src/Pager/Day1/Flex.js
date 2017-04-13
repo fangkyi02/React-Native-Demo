@@ -11,6 +11,8 @@ import {
 import { StackNavigator } from 'react-navigation';
 import TextAlign from '../../Component/Day1/TextAlign';
 import ViewAlign from '../../Component/Day1/ViewAlign'
+import TabView from '../../Component/Day1/TabView';
+
 
 class FlexView extends Component {
 
@@ -19,6 +21,7 @@ class FlexView extends Component {
     this.data = [
       {text:'文本居中',onDown:'文本排列'},
       {text:'视图居中',onDown:'视图排列'},
+      {text:'Tab控件',onDown:'Tab控件'},
     ]
   }
 
@@ -67,6 +70,9 @@ export default FlexRouter = StackNavigator({
   },
   '视图排列':{
     screen:ViewAlign
+  },
+  'Tab控件':{
+    screen:TabView
   }},
   {
     initialRouteName:'Flex布局视图',

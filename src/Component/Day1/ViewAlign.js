@@ -11,7 +11,7 @@ export default class ViewAlign extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>视图居中</Text>
+        <View style={{backgroundColor:'red',height:20,width:54}}></View>
       </View>
     );
   }
@@ -20,5 +20,7 @@ export default class ViewAlign extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent:'center',
+    alignItems:'center'
   },
 });

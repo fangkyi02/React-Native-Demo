@@ -10,8 +10,8 @@ import {
 export default class TextAlign extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>文本居中</Text>
+      <View style={[styles.container,{justifyContent:'center',alignItems:'center'}]}>
+        <Text >asdasd</Text>
       </View>
     );
   }
