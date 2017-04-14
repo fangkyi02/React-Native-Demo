@@ -14,23 +14,24 @@ import {observer} from 'mobx-react/native';
 export default class MobxView extends Component {
   constructor(props){
     super(props);
-    // var a = @observable(0);
-    // var a = observable(0);
-    // @observable a = 0;
-    this.a = observable(0);
+    a = observable(0);
+    console.warn(a.get());
   }
 
   _onDowm = () =>{
-    console.warn(1);
+    a ++;
+    console.warn(a);
   }
   //
-  // autorun(()=>
-  //   console.warn(a.get);
-  // )
+  autorun = () =>{
+    console.warn(1);
+  }
 
   render() {
+    console.warn('更新');
     return (
       <View style={styles.container}>
+        <Text style={styles.textView} onPress={this._onDowm.bind(this)}>124125</Text>
         <Text style={styles.textView} onPress={this._onDowm.bind(this)}>{this.a}</Text>
       </View>
     );
