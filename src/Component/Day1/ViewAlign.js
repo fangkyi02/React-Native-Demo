@@ -8,6 +8,13 @@ import {
 } from 'react-native';
 
 export default class ViewAlign extends Component {
+  componentWillMount() {
+    fetch('http://www.baidu.com')
+    .then((r) => r.text())
+    .then((re)=>{
+      console.warn(re);
+    })
+  }
   render() {
     return (
       <View style={styles.container}>

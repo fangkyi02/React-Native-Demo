@@ -1,10 +1,15 @@
 navigator.getCurrentRoutes();
+observable
+computed
+autorun
+observer
+action
 Dimensions,
 measure,
 chilren,
 forceUpdate,
 AndroidPermissions
-
+StackNavigator
 ActivityIndicatorIOS - ReactActivityIndicator
 ActivityIndicator - ReactActivityIndicator
 DatePickerIOS - ReactDatePicker TODO
