@@ -1,6 +1,7 @@
 navigator.getCurrentRoutes();
 observable
 computed
+useStrict
 autorun
 observer
 action

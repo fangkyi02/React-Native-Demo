@@ -10,7 +10,7 @@ import {
 
 import { StackNavigator } from 'react-navigation';
 import TextAlign from '../../Component/Day1/TextAlign';
-import ViewAlign from '../../Component/Day1/ViewAlign'
+import ViewAlign from '../../Component/Day1/ViewAlign';
 import TabView from '../../Component/Day1/TabView';
 
 

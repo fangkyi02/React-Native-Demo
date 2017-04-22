@@ -5,34 +5,63 @@ import {
   View,
   Text,
   StyleSheet,
+  FlatList,
+  Animated
 } from 'react-native';
 
-import {observable,autorun} from 'mobx';
+import {ListItemData,Test} from '../../Component/Day2/ListItemData';
+import ListItemView from '../../Component/Day2/ListItemView';
+// import DevTools from 'mobx-react-devtools'
+
 import {observer} from 'mobx-react/native';
+import {action,autorun} from 'mobx';
+
+const viewabilityConfig = {
+  minimumViewTime: 0,
+  viewAreaCoveragePercentThreshold: 100,
+  waitForInteraction: true,
+};
 
 @observer
-export default class MobxView extends Component {
+export default class MobxListView extends Component {
   constructor(props){
     super(props);
-    a = observable(0);
-    console.warn(a.get());
+    // this.list = new ListItemData();
+    this.data = new ListItemData();
   }
 
-  _onDowm = () =>{
-    a ++;
-    console.warn(a);
+
+  _renderItem = ({item,index}) =>{
+    return (
+      <ListItemView itemData={item} id={index} data={this.data}/>
+    );
   }
-  //
-  autorun = () =>{
-    console.warn(1);
+
+  @action
+  _onPress = (i) =>{
+    this.data.itemData.TotalAmount = 0;
+    this.data.toggerSelectAll();
   }
 
   render() {
-    console.warn('更新');
     return (
       <View style={styles.container}>
-        <Text style={styles.textView} onPress={this._onDowm.bind(this)}>124125</Text>
-        <Text style={styles.textView} onPress={this._onDowm.bind(this)}>{this.a}</Text>
+        <Text onPress={this._onPress}>
+          全选
+        </Text>
+
+        {/* 总金额 */}
+        <Text>
+          {this.data.itemData.TotalAmount}
+        </Text>
+
+        <FlatList
+          // viewabilityConfig={viewabilityConfig}
+          data={this.data.itemData.itemMoney}
+          renderItem={this._renderItem}
+          debug={true}
+        />
+         {/* <DevTools /> */}
       </View>
     );
   }
@@ -41,10 +70,6 @@ export default class MobxView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent:'center',
-    alignItems:'center'
+    marginTop:20
   },
-  textView:{
-    fontSize:20
-  }
 });
