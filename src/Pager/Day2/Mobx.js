@@ -11,8 +11,6 @@ import {
 
 import {ListItemData,Test} from '../../Component/Day2/ListItemData';
 import ListItemView from '../../Component/Day2/ListItemView';
-// import DevTools from 'mobx-react-devtools'
-
 import {observer} from 'mobx-react/native';
 import {action,autorun} from 'mobx';
 
@@ -26,10 +24,8 @@ const viewabilityConfig = {
 export default class MobxListView extends Component {
   constructor(props){
     super(props);
-    // this.list = new ListItemData();
     this.data = new ListItemData();
   }
-
 
   _renderItem = ({item,index}) =>{
     return (
@@ -61,7 +57,6 @@ export default class MobxListView extends Component {
           renderItem={this._renderItem}
           debug={true}
         />
-         {/* <DevTools /> */}
       </View>
     );
   }

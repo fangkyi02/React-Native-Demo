@@ -32,11 +32,11 @@ export default class ListItemView extends Component {
 
     this.itemViewData.isSelect = !this.itemViewData.isSelect;
     if (this.itemViewData.isSelect) {
-      // 添加数值
+      //添加
       this.itemViewData.itemTotalAmount = this.itemViewData.money * this.itemViewData.SelectNumber;
       this.props.data.increase(this.itemViewData.itemTotalAmount);
     }else {
-      // 减少数值
+      // 减少
       this.itemViewData.itemTotalAmount = this.itemViewData.money * this.itemViewData.SelectNumber;
       this.props.data.reduce(this.itemViewData.itemTotalAmount);
     }

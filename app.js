@@ -15,8 +15,11 @@ import {
 
 import FlexView from './src/Pager/Day1/Flex';
 import MobxView from './src/Pager/Day2/Mobx';
+import FlatListChat from './src/Pager/Day3/FlatListChat';
 
-import {StackNavigator} from 'react-navigation';
+import {StackNavigator,NavigationActions} from 'react-navigation';
+
+
 
 export default class DemoView extends Component {
   constructor(props){
@@ -24,6 +27,7 @@ export default class DemoView extends Component {
     this.data = [
       {text:'Flex视图',onDown:'Flex视图'},
       {text:'Mobx视图',onDown:'Mobx视图'},
+      {text:'FlatListChat',onDown:'FlatListChat'}
     ]
   }
   _initRender = () =>{
@@ -70,6 +74,9 @@ const Demo = StackNavigator({
   },
   'Mobx视图':{
     screen:MobxView
+  },
+  'FlatListChat':{
+    screen:FlatListChat
   }},
   {
     initialRouteName:'DemoView',
