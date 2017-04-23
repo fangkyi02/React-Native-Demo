@@ -37,16 +37,16 @@ export default class ListItemImg extends Component {
   _imgRender = () =>{
     return ChatStore.getImgData().map((el,i)=>{
       return (
-        <View>
+        <TouchableHighlight style={{flex:1,justifyContent:'center',alignItems:'center'}} onPress={this._modalDown}>
           <Image source={el.img} style={{width,height:200}}/>
-        </View>
+        </TouchableHighlight>
       )
     });
   }
 
   // modal被按下
   _modalDown = () =>{
-    // this.modalVisible = !this.modalVisible
+    this.modalVisible = !this.modalVisible
   }
 
   render() {
@@ -56,14 +56,14 @@ export default class ListItemImg extends Component {
           style={styles.modal}
           transparent={true}
           visible={this.modalVisible}>
-
-            <View style={styles.modalView} onPress={this._modalDown}>
-              <View style={styles.scrollView}>
-                <ScrollView horizontal={true} pagingEnabled={true}>
+            <View style={styles.modalView}>
+                <ScrollView
+                  horizontal={true}
+                  pagingEnabled={true}>
                   {this._imgRender()}
                 </ScrollView>
               </View>
-            </View>
+
 
         </Modal>
 
@@ -95,8 +95,6 @@ const styles = StyleSheet.create({
   modalView:{
     flex:1,
     backgroundColor:'black',
-    justifyContent:'center',
-    alignItems:'center'
   },
   scrollView:{
     width,

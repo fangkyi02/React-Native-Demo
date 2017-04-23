@@ -58,7 +58,6 @@ export default class ListItemVideo extends Component {
         <ListItem/>
         <View style={[styles.textView,{width:150,height:100}]}>
           <TouchableOpacity onPress={this._playDwon} style={{width:150,height:100}}>
-
              {this.initRenderVideo()}
           </TouchableOpacity>
         </View>
